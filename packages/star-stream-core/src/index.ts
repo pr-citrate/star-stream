@@ -24,4 +24,4 @@ export function StarStream(k: number, targetRange: range) {
     };
 }
 
-type StarMaker = ReturnType<typeof StarStream>;
+export type StarMaker = ReturnType<typeof StarStream>;
