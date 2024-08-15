@@ -1,44 +1,44 @@
 {
-    "name": "@star-stream/vue",
-    "version": "1.0.1",
-    "private": true,
-    "dependencies": {
-      "core-js": "^3.30.2",
-      "vue": "^3.3.4"
+  "name": "@star-stream/vue",
+  "version": "1.0.1",
+  "private": false,
+  "dependencies": {
+    "core-js": "^3.30.2",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@star-stream/core": "^1.0.1",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "@vue/compiler-sfc": "^3.3.4"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
     },
-    "devDependencies": {
-      "@vue/cli-plugin-babel": "~5.0.8",
-      "@vue/cli-plugin-eslint": "~5.0.8",
-      "@vue/cli-service": "~5.0.8",
-      "@vue/compiler-sfc": "^3.3.4",
-      "@star-stream/core": "^1.0.1"
-    },
-    "scripts": {
-      "serve": "vue-cli-service serve",
-      "build": "vue-cli-service build",
-      "lint": "vue-cli-service lint"
-    },
-    "eslintConfig": {
-      "root": true,
-      "env": {
-        "node": true
-      },
-      "extends": [
-        "plugin:vue/vue3-essential",
-        "eslint:recommended"
-      ],
-      "parserOptions": {
-        "parser": "@babel/eslint-parser"
-      },
-      "rules": {}
-    },
-    "browserslist": [
-      "> 1%",
-      "last 2 versions",
-      "not dead"
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
     ],
-    "repository": "https://github.com/pr-citrate/star-stream",
-    "author": "pr-citrate",
-    "license": "MIT"
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "repository": "https://github.com/pr-citrate/star-stream",
+  "author": "pr-citrate",
+  "license": "MIT",
+  "main": "index.ts"
 }
-  
