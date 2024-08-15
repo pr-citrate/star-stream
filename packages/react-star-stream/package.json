@@ -1,7 +1,7 @@
 {
-  "name": "react-star-stream",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@star-stream/react",
+  "version": "1.0.1",
+  "private": false,
   "dependencies": {
     "@star-stream/core": "^1.0.1"
   },
@@ -21,8 +21,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -36,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/pr-citrate/star-stream",
+  "author": "pr-citrate",
+  "license": "MIT"
 }
