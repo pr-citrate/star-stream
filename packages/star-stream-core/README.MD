@@ -1,1 +1,1 @@
-[View the markdown file]([View the markdown file](./../../README.md))
+[View the markdown file](https://raw.githubusercontent.com/pr-citrate/star-stream/main/README.MD)
