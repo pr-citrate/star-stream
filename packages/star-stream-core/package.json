@@ -1,0 +1,11 @@
+{
+  "name": "@star-stream/core",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "pr-citrate",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^22.3.0",
+    "typescript": "^5.5.4"
+  }
+}
