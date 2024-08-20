@@ -1,70 +1,54 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { StarStream } from '@star-stream/core';
+  import { useStarStream } from '@star-stream/core';
   import Graph from './Graph.svelte';
 
-  let starStream: any;
   let stars: number[] = [];
-  let sum: number = 0;
-  let mean: number = 0;
-  let stdDev: number = 0;
+  let mean: number;
+  let stdDev: number;
+
+  const { addStar, removeStar, reAlignStar } = useStarStream(100, [0, 100]);
+
+  const updateStars = () => {
+    stars = useStarStream(100, [0, 100]).stars;
+    mean = useStarStream(100, [0, 100]).mean;
+    stdDev = useStarStream(100, [0, 100]).stdDev;
+  };
 
   onMount(() => {
-      starStream = StarStream(1, [0, 10]);
-      starStream = new starStream();
-
-      stars = starStream.stars;
-      sum = starStream.sum;
-      mean = starStream.mean;
-      stdDev = starStream.stdDev;
+    updateStars();
   });
 
-  function addStar(i: number) {
-      if (i >= 0) {
-          starStream.addStar(i);
-          count=i;
-          updateStats();
-      }
-  }
+  const handleAddStar = () => {
+    addStar(Math.random() * 100);
+    updateStars();
+  };
 
-  function updateStats() {
-      stars = starStream.stars;
-      sum = starStream.sum;
-      mean = starStream.mean;
-      stdDev = starStream.stdDev;
-  }
+  const handleRemoveStar = () => {
+    removeStar(stars.length - 1);
+    updateStars();
+  };
 
-  let count: number = 0;
+  const handleReAlignStars = () => {
+    reAlignStar([50, 75]);
+    updateStars();
+  };
 </script>
 
 <style>
-  .container {
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-
-  }
+  @import './app.css';
 </style>
 
-<div class="container">
-  <div style="display: flex; cursor: pointer;">
-    {#each Array(5) as _, i}
-      <div
-        style="color: {i < count ? '#ffd700' : '#ccc'}; font-size: 24px;" on:click={() => addStar(i+1)}
-      >
-        ★
-      </div>
-    {/each}
-  </div>
-
+<main>
+  <h1>Star Stream Example</h1>
+  <Graph {stars} />
   <div>
-      <p>Total Sum : {sum}</p>
-      <p>Mean : {mean.toFixed(2)}</p>
-      <p>stdDev : {stdDev.toFixed(2)}</p>
+    <button on:click={handleAddStar}>Add Star</button>
+    <button on:click={handleRemoveStar}>Remove Star</button>
+    <button on:click={handleReAlignStars}>Re-align Stars</button>
   </div>
-
-  <Graph {stars} {mean} {stdDev} />
-</div>
+  <div>
+    <p>Mean: {mean}</p>
+    <p>Standard Deviation: {stdDev}</p>
+  </div>
+</main>
