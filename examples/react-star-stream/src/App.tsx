@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import StarChart from './StarChart';
-import { useStarStream } from '../../../packages/react-star-stream/src/hooks/useStarStream';
+import { useStarStream } from '@star-stream/core';
 
 function App() {
   const {
